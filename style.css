@@ -1,0 +1,262 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    text-decoration: none;
+}
+
+:root{
+    --Lime_Green: hsl(163, 72%, 41%);
+    --Bright_Red: hsl(356, 69%, 56%);
+    --Facebook: hsl(208, 92%, 53%);
+    --Twitter: hsl(203, 89%, 53%);
+    --Instagram: linear-gradient(to right,hsl(37, 97%, 70%) ,hsl(329, 70%, 58%));
+    --YouTube: hsl(348, 97%, 39%);
+    --Toggle: hsl(230, 22%, 74%);
+    --BG: hsl(0, 0%, 100%);
+    --Top-BG-Pattern: hsl(225, 100%, 98%);
+    --Card-BG: hsl(227, 47%, 96%);
+    --TextColor1: hsl(228, 12%, 44%);
+    --TextColor2: hsl(230, 17%, 14%);
+}
+.dark-mode{
+    --BG: hsl(230, 17%, 14%);
+    --Top-BG-Pattern: hsl(232, 19%, 15%);
+    --Card-BG: hsl(228, 28%, 20%);
+    --TextColor1: hsl(228, 34%, 66%);
+    --TextColor2: hsl(0, 0%, 100%);
+    --Toggle: linear-gradient(hsl(210, 78%, 56%) , hsl(146, 68%, 55%));
+}
+
+body{
+    background-color: var(--BG);
+}
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+.container{
+    width: 90%;
+    min-height: 100vh;
+    max-width: 1080px;
+}
+.dashboard{
+    padding: 3em 0;
+}
+.dashboard-header{
+    display: flex;
+    flex-direction: column;
+    gap:1.5em;
+}
+.dashboard-title{
+    color:var(--TextColor2);
+}
+.followers{
+    color: var(--TextColor1);
+    margin-top: .5em;
+    display: inline-block;
+}
+.dashboard-header-rightdiv{
+    border-top: .1em solid var(--TextColor1);
+    padding-top: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    gap:1em;
+}
+.dark-mode-title{
+    color:var(--TextColor1);
+    font-weight: 700;
+}
+#check + .checkbox-label{
+    display: inline-block;
+    width:3.5rem;
+    height: 1.7rem;
+    background-color:var(--Toggle);
+    border-radius: 1em;
+    cursor: pointer;
+    position: relative;
+    transition: left 0.6s ease, background-color 0.6s ease; 
+}
+
+#check + .checkbox-label::before{
+    position: absolute;
+    content: " ";
+    left:6%;
+    top:50%;
+    width:1.3rem;
+    height:1.3rem;
+    background-color: var(--Top-BG-Pattern);
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+#check:checked + .checkbox-label{
+    background: var(--Toggle);
+}
+#check:checked + .checkbox-label::before{
+    left:57%;
+    background-color: var(--Top-BG-Pattern);
+}
+
+#check{
+    display: none;
+}
+
+.main-stats-div,
+.overview-div-wrapper{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap:1em;
+    justify-content: center;
+    align-items: center;
+    margin: 2em 0 3em;
+    text-align: center;
+}
+
+.main-stats-card{
+    background-color: var(--Card-BG);
+    padding: 1.9em 1.6em 1.6em;
+    border-radius: .5em;
+    position: relative;
+    overflow: hidden;
+}
+
+.main-stats-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: .3em;
+}
+
+.main-stats-card1::before{
+    background-color: var(--Facebook);
+}
+.main-stats-card2::before {
+    background-color: var(--Twitter);
+}
+
+.main-stats-card3::before {
+    background-image: var(--Instagram);
+}
+
+.main-stats-card4::before {
+    background-color: var(--YouTube);
+}
+
+
+.socialmediaaccount,
+.socialmedia-img,
+.new-followers-img,
+.new-followers-count,
+.overview-card-precent,
+.overview-card-precent-icon{
+    display: block;
+}
+
+.new-followers-div,
+.socialmedia-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.socialmedia-div{
+    gap:1em;
+}
+.new-followers-div{
+    gap:.5em;
+    margin-top: 1.5em;
+}
+.socialmediaaccount{
+    font-weight: 700;
+    color: var(--TextColor1);
+}
+.main-stats-card-followers{
+    font-size: 3.5rem;
+    margin-top:  .4em;
+    color:var(--TextColor2);
+    font-weight: 700;
+}
+
+.main-stats-card-title{
+    font-weight: 400;
+    color: var(--TextColor1);
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    font-size: .9rem;
+}
+.new-followers-count{
+    color:var(--Lime_Green);
+    font-weight: 700;
+}
+.main-stats-card4 .new-followers-count{
+    color: var(--Bright_Red);
+}
+
+.overview-div-title{
+    color:var(--TextColor1);
+    font-size: 1.3rem;
+    margin-bottom: 1.3em;
+}
+
+.overview-card{
+    background-color: var(--Card-BG);
+    padding: 1.5em;
+    border-radius: .5em;
+}
+.overview-card-header,
+.overview-card-body{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+}
+.overview-card-title{
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--TextColor1);
+}
+.overview-card-body{
+    margin-top: 1em;
+}
+.overview-card-count{
+    font-size: 1.6rem;
+    color: var(--TextColor2);
+    font-weight: 700;
+}
+.overview-card-precent-div{
+    display: flex;
+    align-items: center;
+    gap:.3em;
+}
+.overview-card-precent{
+    font-size: .9rem;
+    font-weight: 700;
+    color:var(--Lime_Green);
+}
+.red{
+    color: var(--Bright_Red);
+}
+@media screen and (min-width:720px){
+    .main-stats-div,
+    .overview-div-wrapper{
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(2,1fr);
+    }
+}
+
+@media screen and (min-width:980px){
+    .main-stats-div,
+    .overview-div-wrapper{
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: 1fr;
+    }
+    
+}
+
+
